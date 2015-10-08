@@ -7,6 +7,12 @@
 $(function() {
 	// post_preview start
 	if (ajaxbase.script == 'posting') {
+		// prepare preview wrapper
+		if (!$('#preview_wrapper').length)
+		{
+			$('#postingbox').before('<div id="preview_wrapper" />')
+		}
+
 		$('input[name="preview"]').click(function() {
 			// disable preview button
 			$(this).attr('disabled', 'disabled');
