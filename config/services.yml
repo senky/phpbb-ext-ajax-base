@@ -10,7 +10,7 @@ services:
         arguments:
             - @template
             - @controller.helper
-            - @service_container
+            - @template_context
             - @request
         tags:
             - { name: event.listener }

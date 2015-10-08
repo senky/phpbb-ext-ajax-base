@@ -27,6 +27,9 @@ class main_controller
 	/**
 	* Constructor
 	*
+	* @param \phpbb\template\template	$template	Template object
+	* @param \phpbb\user				$user		User object
+	* @param \phpbb\config\config		$config		Config object
 	* @access public
 	*/
 	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config)

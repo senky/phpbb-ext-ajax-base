@@ -23,22 +23,26 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\controller\helper */
 	protected $helper;
 
-	/** @var ContainerInterface */
-	protected $container;
+	/** @var \phpbb\template\context */
+	protected $template_context;
 
 	/** @var \phpbb\request\request */
 	protected $request;
 
 	/**
-	 * Constructor
-	 *
-	 * @access	public
-	 */
-	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper, $phpbb_container, \phpbb\request\request $request)
+	* Constructor
+	*
+	* @param \phpbb\template\template	$template			Template object
+	* @param \phpbb\controller\helper	$helper				Helper object
+	* @param \phpbb\template\context	$template_context	Template context object
+	* @param \phpbb\request\request		$request			Request object
+	* @access public
+	*/
+	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper, \phpbb\template\context $template_context, \phpbb\request\request $request)
 	{
 		$this->template = $template;
 		$this->helper = $helper;
-		$this->container = $phpbb_container;
+		$this->template_context = $template_context;
 		$this->request = $request;
 	}
 
@@ -66,8 +70,7 @@ class listener implements EventSubscriberInterface
 	 */
 	public function assign_common_template_variables($event)
 	{
-		$context = $this->container->get('template_context');
-		$rootref = &$context->get_root_ref();
+		$rootref = $this->template_context->get_root_ref();
 
 		$this->template->assign_vars(array(
 			'U_AJAX_BASE_STATISTICS'	=> $this->helper->route('senky_ajaxbase_statistics'),
