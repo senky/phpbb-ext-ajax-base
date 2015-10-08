@@ -10,6 +10,7 @@
 
 namespace senky\ajaxbase\event;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -99,9 +100,8 @@ class listener implements EventSubscriberInterface
 			}
 			else if (sizeof($event['error']))
 			{
-				// seems to be the best HTTP code
-				header('HTTP/1.1 412 Precondition Failed');
-				exit(implode('<br />', $event['error']));
+				JsonResponse::create($event['error'], 412)->send();
+				exit_handler();
 			}
 			else
 			{

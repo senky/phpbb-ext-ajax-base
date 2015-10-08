@@ -49,15 +49,18 @@ $(function() {
 				statusCode: {
 					// errors
 					412: function(data) {
+						var errors = data.responseJSON;
+						var errors_html = errors.join('<br />');
+
 						// hide preview
 						$('#preview_wrapper').html('');
 
 						// display errors
 						if ($('.error').length > 0) {
-							$('.error').html(data.responseText);
+							$('.error').html(errors_html);
 						}
 						else {
-							$('.fields1:first').prepend('<p class="error">' + data.responseText + '</p>');
+							$('.fields1:first').prepend('<p class="error">' + errors_html + '</p>');
 						}
 					},
 
