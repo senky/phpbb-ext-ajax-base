@@ -1,3 +1,7 @@
-senky_ajaxbase_controller:
-    path: /ajax_base
-    defaults: { _controller: senky.ajaxbase.controller:handle }
+senky_ajaxbase_statistics:
+    path: /ajax_base/statistics
+    defaults: { _controller: senky.ajaxbase.controller:handle_statistics }
+
+senky_ajaxbase_who_is_online:
+    path: /ajax_base/who_is_online
+    defaults: { _controller: senky.ajaxbase.controller:handle_who_is_online }

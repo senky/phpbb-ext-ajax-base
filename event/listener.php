@@ -70,7 +70,8 @@ class listener implements EventSubscriberInterface
 		$rootref = &$context->get_root_ref();
 
 		$this->template->assign_vars(array(
-			'U_AJAX_BASE'		=> $this->helper->route('senky_ajaxbase_controller'),
+			'U_AJAX_BASE_STATISTICS'	=> $this->helper->route('senky_ajaxbase_statistics'),
+			'U_AJAX_BASE_WHO_IS_ONLINE'	=> $this->helper->route('senky_ajaxbase_who_is_online'),
 
 			// overwrite
 			'TOTAL_USERS_ONLINE'	=> '<span id="who_is_online_wrapper">' . $rootref['TOTAL_USERS_ONLINE'],

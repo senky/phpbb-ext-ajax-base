@@ -85,8 +85,8 @@ $(function() {
 	// who is online and statistics
 	if (ajaxbase.script == 'index') {
 		setInterval(function() {
-			$('#who_is_online_wrapper').load(ajaxbase.url, {mode: 'who_is_online'});
-			$('#statistics_wrapper').load(ajaxbase.url, {mode: 'statistics'});
+			$('#who_is_online_wrapper').load(ajaxbase.statistics_url);
+			$('#statistics_wrapper').load(ajaxbase.who_is_online_url);
 		}, 15000);
 	}
 });

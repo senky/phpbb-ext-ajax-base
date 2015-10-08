@@ -2,7 +2,6 @@ services:
     senky.ajaxbase.controller:
         class: senky\ajaxbase\controller\main_controller
         arguments:
-            - @request
             - @template
             - @user
             - @config
