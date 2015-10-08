@@ -1,0 +1,3 @@
+senky_ajaxbase_controller:
+    path: /ajax_base
+    defaults: { _controller: senky.ajaxbase.controller:handle }

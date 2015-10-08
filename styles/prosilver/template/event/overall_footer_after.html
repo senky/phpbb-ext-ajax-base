@@ -1,0 +1,12 @@
+<!-- IF SCRIPT_NAME eq 'index' or SCRIPT_NAME eq 'posting' -->
+
+	<script type="text/javascript">
+		var ajaxbase = {
+			script: '{SCRIPT_NAME}',	
+			url: '{U_AJAX_BASE}',
+			preview_url: '{S_POST_ACTION}'.split('&amp;').join('&'), // replace all &amp; with &
+		}
+	</script>
+	<!-- INCLUDEJS @senky_ajaxbase/ajax_base.js -->
+
+<!-- ENDIF -->

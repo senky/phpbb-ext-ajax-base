@@ -1,0 +1,17 @@
+services:
+    senky.ajaxbase.controller:
+        class: senky\ajaxbase\controller\main_controller
+        arguments:
+            - @request
+            - @template
+            - @user
+            - @config
+    senky.ajaxbase.listener:
+        class: senky\ajaxbase\event\listener
+        arguments:
+            - @template
+            - @controller.helper
+            - @service_container
+            - @request
+        tags:
+            - { name: event.listener }
