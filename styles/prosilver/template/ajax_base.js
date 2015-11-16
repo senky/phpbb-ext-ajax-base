@@ -101,6 +101,7 @@ $(function() {
 
 	setInterval(function() {
 		$('#nav-main .icon-pm strong').load(ajaxbase.privatemsgs);
+		$('#info').load(ajaxbase.pmregbar);
 		$('#nav-main .icon-notification').load(ajaxbase.notification);
 	}, 15000);
 });

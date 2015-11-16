@@ -103,6 +103,7 @@ class main_controller
 
 		$this->template->assign_vars(array(
 			'S_AJAX_BASE_NOTIFICATION'	=> ($mode == 'notification') ? true : false,
+			'S_AJAX_BASE_PMREGBAR'		=> ($mode == 'pmregbar') ? true : false,
 			'U_VIEW_ALL_NOTIFICATIONS'	=> generate_board_url() . "/ucp.php?i=ucp_notifications",
 		));
 
