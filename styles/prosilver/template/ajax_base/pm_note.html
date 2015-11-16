@@ -1,7 +1,7 @@
 <!-- IF S_AJAX_BASE_NOTIFICATION -->
 <a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger"><span>{L_NOTIFICATIONS} [</span><strong>{NOTIFICATIONS_COUNT}</strong><span>]</span></a>
 <!-- INCLUDE notification_dropdown.html -->
-<!-- ELSE IF S_AJAX_BASE_PMREGBAR -->
+<!-- ELSE IF S_AJAX_BASE_PMREGBAR and (S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG) -->
 <div id="infobar">
 <a href="{U_PRIVATEMSGS}"><span class="pm-mail"></span>{L_PMREGBAR_HELLO} {S_USERNAME} {L_PMREGBAR_YOUHAVE} {PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD --> {L_PMREGBAR_AND} {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --><span class="pm-mail"></span></a>
 </div>
