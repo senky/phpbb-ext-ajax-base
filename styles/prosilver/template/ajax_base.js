@@ -98,6 +98,12 @@ $(function() {
 			$('#statistics_wrapper').load(ajaxbase.who_is_online_url);
 		}, 15000);
 	}
+
+	setInterval(function() {
+		$('#nav-main .icon-pm strong').load(ajaxbase.privatemsgs);
+		$('#info').load(ajaxbase.pmregbar);
+		$('#nav-main .icon-notification').load(ajaxbase.notification);
+	}, 15000);
 });
 
 })(jQuery); // Avoid conflicts with other libraries

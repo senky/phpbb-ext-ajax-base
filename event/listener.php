@@ -76,6 +76,9 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 			'U_AJAX_BASE_STATISTICS'	=> $this->helper->route('senky_ajaxbase_statistics'),
 			'U_AJAX_BASE_WHO_IS_ONLINE'	=> $this->helper->route('senky_ajaxbase_who_is_online'),
+			'U_AJAX_BASE_PRIVATEMSGS'	=> $this->helper->route('senky_ajaxbase_pm_note'),
+			'U_AJAX_BASE_NOTIFICATION'	=> $this->helper->route('senky_ajaxbase_pm_note', array('mode' => 'notification')),
+			'U_AJAX_BASE_PMREGBAR'		=> $this->helper->route('senky_ajaxbase_pm_note', array('mode' => 'pmregbar')),
 
 			// overwrite
 			'TOTAL_USERS_ONLINE'	=> '<span id="who_is_online_wrapper">' . $rootref['TOTAL_USERS_ONLINE'],

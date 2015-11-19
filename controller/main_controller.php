@@ -52,7 +52,12 @@ class main_controller
 		$this->template->set_filenames(array(
 			'body' => 'ajax_base/who_is_online.html')
 		);
-		page_footer();
+		//page_footer();
+
+		$this->template->display('body');
+
+		garbage_collection();
+		exit_handler();
 	}
 
 	/**
@@ -71,10 +76,44 @@ class main_controller
 		));
 
 		// Output page
-		page_header('');
+		//page_header('');
 		$this->template->set_filenames(array(
 			'body' => 'ajax_base/statistics.html')
 		);
-		page_footer();
+		//page_footer();
+
+		$this->template->display('body');
+
+		garbage_collection();
+		exit_handler();
+	}
+
+	/**
+	* Handle the Private msgs and notification requests
+	*
+	* @return null
+	* @access public
+	*/
+	public function handle_pm_note()
+	{
+		$mode = request_var('mode', '');
+
+		// Output page
+		page_header('');
+
+		$this->template->assign_vars(array(
+			'S_AJAX_BASE_NOTIFICATION'	=> ($mode == 'notification') ? true : false,
+			'S_AJAX_BASE_PMREGBAR'		=> ($mode == 'pmregbar') ? true : false,
+			'U_VIEW_ALL_NOTIFICATIONS'	=> generate_board_url() . "/ucp.php?i=ucp_notifications",
+		));
+
+		$this->template->set_filenames(array(
+			'body' => 'ajax_base/pm_note.html')
+		);
+
+		$this->template->display('body');
+
+		garbage_collection();
+		exit_handler();
 	}
 }
