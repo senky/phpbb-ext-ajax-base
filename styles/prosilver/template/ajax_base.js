@@ -94,14 +94,27 @@ $(function() {
 			return false;
 		});
 	}
+	// post_preview end
 
-	// who is online and statistics
-	if (ajaxbase.script == 'index') {
-		setInterval(function() {
-			$('#who_is_online_wrapper').load(ajaxbase.who_is_online_url);
-			$('#statistics_wrapper').load(ajaxbase.statistics_url);
-		}, 15000);
+	// who_is_online and statistics start
+	switch(ajaxbase.script) {
+		case 'index':
+
+			setInterval(function() {
+				$('#who_is_online_wrapper').load(ajaxbase.who_is_online_url);
+			}, 15000);
+
+		// no break
+
+		case 'app/portal':
+
+			setInterval(function() {
+				$('#statistics_wrapper').load(ajaxbase.statistics_url);
+			}, 15000);
+
+		break;
 	}
+	// who_is_online and statistics end
 });
 
 })(jQuery); // Avoid conflicts with other libraries
