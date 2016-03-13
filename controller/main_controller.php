@@ -27,21 +27,29 @@ class main_controller
 	/** @var \phpbb\controller\helper */
 	protected $helper;
 
+	/** @var string */
+	protected $root_path;
+
+	/** @var string */
+	protected $php_ext;
+
 	/**
 	* Constructor
 	*
 	* @param \phpbb\template\template	$template		Template object
 	* @param \phpbb\user				$user			User object
 	* @param \phpbb\config\config		$config			Config object
-	* @param \phpbb\controller\helper	$helper			Helper object
+	* @param string						$root_path		phpBB root path
+	* @param string						$php_ext		php ext
 	* @access public
 	*/
-	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config, \phpbb\controller\helper $helper)
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config, $root_path, $php_ext)
 	{
 		$this->template = $template;
 		$this->user = $user;
 		$this->config = $config;
-		$this->helper = $helper;
+		$this->root_path = $root_path;
+		$this->php_ext = $php_ext;
 	}
 
 	/**
@@ -56,7 +64,7 @@ class main_controller
 			'TOTAL_POSTS'	=> $this->user->lang('TOTAL_POSTS_COUNT', (int) $this->config['num_posts']),
 			'TOTAL_TOPICS'	=> $this->user->lang('TOTAL_TOPICS', (int) $this->config['num_topics']),
 			'TOTAL_USERS'	=> $this->user->lang('TOTAL_USERS', (int) $this->config['num_users']),
-			'NEWEST_USER'	=> $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour'], false, $this->helper->route('memberlist'))),
+			'NEWEST_USER'	=> $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour'], false, append_sid("{$this->root_path}memberlist.php{$this->php_ext}", 'mode=viewprofile', true, false, true))),
 		));
 
 		// Output page
