@@ -52,10 +52,17 @@ class main_controller
 	*/
 	public function handle_statistics()
 	{
+		$this->template->assign_vars(array(
+			'TOTAL_POSTS'	=> $this->user->lang('TOTAL_POSTS_COUNT', (int) $this->config['num_posts']),
+			'TOTAL_TOPICS'	=> $this->user->lang('TOTAL_TOPICS', (int) $this->config['num_topics']),
+			'TOTAL_USERS'	=> $this->user->lang('TOTAL_USERS', (int) $this->config['num_users']),
+			'NEWEST_USER'	=> $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour'], false, $this->helper->route('memberlist'))),
+		));
+
 		// Output page
-		page_header('', true);
+		page_header('');
 		$this->template->set_filenames(array(
-			'body' => 'ajax_base/who_is_online.html')
+			'body' => 'ajax_base/statistics.html')
 		);
 		page_footer();
 	}
@@ -68,19 +75,10 @@ class main_controller
 	*/
 	public function handle_who_is_online()
 	{
-		global $phpbb_root_path, $phpEx;
-
-		$this->template->assign_vars(array(
-			'TOTAL_POSTS'	=> $this->user->lang('TOTAL_POSTS_COUNT', (int) $this->config['num_posts']),
-			'TOTAL_TOPICS'	=> $this->user->lang('TOTAL_TOPICS', (int) $this->config['num_topics']),
-			'TOTAL_USERS'	=> $this->user->lang('TOTAL_USERS', (int) $this->config['num_users']),
-			'NEWEST_USER'	=> $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour'], false, $this->helper->route('memberlist'))),
-		));
-
 		// Output page
-		page_header('');
+		page_header('', true);
 		$this->template->set_filenames(array(
-			'body' => 'ajax_base/statistics.html')
+			'body' => 'ajax_base/who_is_online.html')
 		);
 		page_footer();
 	}
