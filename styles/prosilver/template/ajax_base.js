@@ -8,9 +8,13 @@ $(function() {
 	// post_preview start
 	if (ajaxbase.script == 'posting') {
 		// prepare preview wrapper
-		if (!$('#preview_wrapper').length)
+		if ($('#preview').length)
 		{
-			$('#postingbox').before('<div id="preview_wrapper" />')
+			$('#preview').wrap('<div id="preview_wrapper" />');
+		}
+		else
+		{
+			$('#postingbox').before('<div id="preview_wrapper" />');
 		}
 
 		$('input[name="preview"]').click(function() {
