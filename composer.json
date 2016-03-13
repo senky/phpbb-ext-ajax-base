@@ -1,9 +1,9 @@
 {
 	"name": "senky/ajaxbase",
 	"type": "phpbb-extension",
-	"description": "This MOD will ajaxify your phpBB board. Ajaxifies Who is online, Statistics and Post preview!",
-	"version": "1.0.0",
-	"time": "2015-07-30",
+	"description": "This extension will ajaxify your phpBB board. Ajaxifies Who is online, Statistics and Post preview!",
+	"version": "1.1.0",
+	"time": "2016-03-13",
 	"license": "GPL-2.0",
 	"authors": [{
 			"name": "Jakub Senko",
@@ -16,7 +16,7 @@
 	"extra": {
 		"display-name": "Ajax Base",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.*"
+			"phpbb/phpbb": ">=3.1.0"
 		}
 	}
 }
