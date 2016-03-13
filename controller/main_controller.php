@@ -24,19 +24,24 @@ class main_controller
 	/** @var \phpbb\config\config */
 	protected $config;
 
+	/** @var \phpbb\controller\helper */
+	protected $helper;
+
 	/**
 	* Constructor
 	*
-	* @param \phpbb\template\template	$template	Template object
-	* @param \phpbb\user				$user		User object
-	* @param \phpbb\config\config		$config		Config object
+	* @param \phpbb\template\template	$template		Template object
+	* @param \phpbb\user				$user			User object
+	* @param \phpbb\config\config		$config			Config object
+	* @param \phpbb\controller\helper	$helper			Helper object
 	* @access public
 	*/
-	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config)
+	public function __construct(\phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config, \phpbb\controller\helper $helper)
 	{
 		$this->template = $template;
 		$this->user = $user;
 		$this->config = $config;
+		$this->helper = $helper;
 	}
 
 	/**
@@ -63,11 +68,13 @@ class main_controller
 	*/
 	public function handle_who_is_online()
 	{
+		global $phpbb_root_path, $phpEx;
+
 		$this->template->assign_vars(array(
 			'TOTAL_POSTS'	=> $this->user->lang('TOTAL_POSTS_COUNT', (int) $this->config['num_posts']),
 			'TOTAL_TOPICS'	=> $this->user->lang('TOTAL_TOPICS', (int) $this->config['num_topics']),
 			'TOTAL_USERS'	=> $this->user->lang('TOTAL_USERS', (int) $this->config['num_users']),
-			'NEWEST_USER'	=> $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour'])),
+			'NEWEST_USER'	=> $this->user->lang('NEWEST_USER', get_username_string('full', $this->config['newest_user_id'], $this->config['newest_username'], $this->config['newest_user_colour'], false, $this->helper->route('memberlist'))),
 		));
 
 		// Output page

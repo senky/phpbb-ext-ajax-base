@@ -5,6 +5,7 @@ services:
             - @template
             - @user
             - @config
+            - @controller.helper
     senky.ajaxbase.listener:
         class: senky\ajaxbase\event\listener
         arguments:
