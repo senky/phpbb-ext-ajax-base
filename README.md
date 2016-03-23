@@ -2,7 +2,7 @@
 
 This is the repository for the development of the phpBB Ajax Base Extension
 
-[![Build Status](https://travis-ci.org/Senky/phpbb-ext-ajax-base.svg?branch=master)](https://travis-ci.org/Senky/phpbb-ext-ajax-base)
+[![Build Status](https://travis-ci.org/Senky/phpbb-ext-ajax-base.svg?branch=develop)](https://travis-ci.org/Senky/phpbb-ext-ajax-base)
 
 ## Install
 
