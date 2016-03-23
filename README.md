@@ -2,6 +2,8 @@
 
 This is the repository for the development of the phpBB Ajax Base Extension
 
+[![Build Status](https://travis-ci.org/Senky/phpbb-ext-ajax-base.svg?branch=master)](https://travis-ci.org/Senky/phpbb-ext-ajax-base)
+
 ## Install
 
 1. [Download the latest validated release](https://www.phpbb.com/customise/db/extension/ajax_base/).
