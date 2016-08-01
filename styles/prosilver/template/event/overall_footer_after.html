@@ -2,7 +2,12 @@
 
 	<script type="text/javascript">
 		var ajaxbase = {
-			script: '{SCRIPT_NAME}',	
+			script: '{SCRIPT_NAME}',
+
+			allow_preview: {S_AJAXBASE_ALLOW_PREVIEW},
+			allow_whoisonline: {S_AJAXBASE_ALLOW_WHOISONLINE},
+			allow_statistics: {S_AJAXBASE_ALLOW_STATISTICS},
+
 			statistics_url: '{U_AJAX_BASE_STATISTICS}',
 			who_is_online_url: '{U_AJAX_BASE_WHO_IS_ONLINE}',
 			preview_url: '{S_POST_ACTION}'.split('&amp;').join('&'), // replace all &amp; with &

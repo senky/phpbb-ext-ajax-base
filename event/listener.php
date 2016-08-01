@@ -30,6 +30,9 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\request\request */
 	protected $request;
 
+	/** @var \phpbb\config\config */
+	protected $config;
+
 	/**
 	* Constructor
 	*
@@ -37,14 +40,16 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\controller\helper	$helper				Helper object
 	* @param \phpbb\template\context	$template_context	Template context object
 	* @param \phpbb\request\request		$request			Request object
+	* @param \phpbb\config\config		$config				Config object
 	* @access public
 	*/
-	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper, \phpbb\template\context $template_context, \phpbb\request\request $request)
+	public function __construct(\phpbb\template\template $template, \phpbb\controller\helper $helper, \phpbb\template\context $template_context, \phpbb\request\request $request, \phpbb\config\config $config)
 	{
 		$this->template = $template;
 		$this->helper = $helper;
 		$this->template_context = $template_context;
 		$this->request = $request;
+		$this->config = $config;
 	}
 
 	/**
@@ -74,6 +79,10 @@ class listener implements EventSubscriberInterface
 		$rootref = $this->template_context->get_root_ref();
 
 		$this->template->assign_vars(array(
+			'S_AJAXBASE_ALLOW_PREVIEW'		=> $this->config['ajaxbase_allow_preview'],
+			'S_AJAXBASE_ALLOW_WHOISONLINE'	=> $this->config['ajaxbase_allow_whoisonline'],
+			'S_AJAXBASE_ALLOW_STATISTICS'	=> $this->config['ajaxbase_allow_statistics'],
+
 			'U_AJAX_BASE_STATISTICS'	=> $this->helper->route('senky_ajaxbase_statistics'),
 			'U_AJAX_BASE_WHO_IS_ONLINE'	=> $this->helper->route('senky_ajaxbase_who_is_online'),
 

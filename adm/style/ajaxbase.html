@@ -1,0 +1,48 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_OPTIONS}</h1>
+
+<form id="acp_board" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_OPTIONS}</legend>
+
+		<dl>
+			<dt>
+				<label for="ajaxbase_allow_preview">{L_AJAXBASE_ALLOW_PREVIEW}{L_COLON}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" id="ajaxbase_allow_preview" class="radio" name="ajaxbase_allow_preview" value="1"<!-- IF AJAXBASE_ALLOW_PREVIEW --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="ajaxbase_allow_preview" value="0"<!-- IF not AJAXBASE_ALLOW_PREVIEW --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="ajaxbase_allow_whoisonline">{L_AJAXBASE_ALLOW_WHOISONLINE}{L_COLON}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" id="ajaxbase_allow_whoisonline" class="radio" name="ajaxbase_allow_whoisonline" value="1"<!-- IF AJAXBASE_ALLOW_WHOISONLINE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="ajaxbase_allow_whoisonline" value="0"<!-- IF not AJAXBASE_ALLOW_WHOISONLINE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt>
+				<label for="ajaxbase_allow_statistics">{L_AJAXBASE_ALLOW_STATISTICS}{L_COLON}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" id="ajaxbase_allow_statistics" class="radio" name="ajaxbase_allow_statistics" value="1"<!-- IF AJAXBASE_ALLOW_STATISTICS --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="ajaxbase_allow_statistics" value="0"<!-- IF not AJAXBASE_ALLOW_STATISTICS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset class="submit-buttons">
+		<legend>{L_SUBMIT}</legend>
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
+	</fieldset>
+
+	{S_FORM_TOKEN}
+</form>
+
+<!-- INCLUDE overall_footer.html -->

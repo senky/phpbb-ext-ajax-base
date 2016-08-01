@@ -6,7 +6,7 @@
 
 $(function() {
 	// post_preview start
-	if (ajaxbase.script == 'posting') {
+	if (ajaxbase.allow_preview && ajaxbase.script == 'posting') {
 		// prepare preview wrapper
 		if ($('#preview').length)
 		{
@@ -100,17 +100,23 @@ $(function() {
 	switch(ajaxbase.script) {
 		case 'index':
 
-			setInterval(function() {
-				$('#who_is_online_wrapper').load(ajaxbase.who_is_online_url);
-			}, 15000);
+			if (ajaxbase.allow_whoisonline)
+			{
+				setInterval(function() {
+					$('#who_is_online_wrapper').load(ajaxbase.who_is_online_url);
+				}, 15000);
+			}
 
 		// no break
 
 		case 'app/portal':
 
-			setInterval(function() {
-				$('#statistics_wrapper').load(ajaxbase.statistics_url);
-			}, 15000);
+			if (ajaxbase.allow_statistics)
+			{
+				setInterval(function() {
+					$('#statistics_wrapper').load(ajaxbase.statistics_url);
+				}, 15000);
+			}
 
 		break;
 	}
