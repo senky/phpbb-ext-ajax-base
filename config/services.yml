@@ -2,18 +2,18 @@ services:
     senky.ajaxbase.controller:
         class: senky\ajaxbase\controller\main_controller
         arguments:
-            - @template
-            - @user
-            - @config
-            - %core.root_path%
-            - %core.php_ext%
+            - '@template'
+            - '@user'
+            - '@config'
+            - '%core.root_path%'
+            - '%core.php_ext%'
     senky.ajaxbase.listener:
         class: senky\ajaxbase\event\listener
         arguments:
-            - @template
-            - @controller.helper
-            - @template_context
-            - @request
-            - @config
+            - '@template'
+            - '@controller.helper'
+            - '@template_context'
+            - '@request'
+            - '@config'
         tags:
             - { name: event.listener }
