@@ -2,14 +2,16 @@
 	"name": "senky/ajaxbase",
 	"type": "phpbb-extension",
 	"description": "This extension will ajaxify your phpBB board. Ajaxifies Who is online, Statistics and Post preview!",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"time": "2016-03-13",
 	"license": "GPL-2.0",
-	"authors": [{
+	"authors": [
+		{
 			"name": "Jakub Senko",
 			"email": "jakubsenko@gmail.com",
 			"role": "Lead Developer"
-		}],
+		}
+	],
 	"require": {
 		"php": ">=5.4"
 	},
