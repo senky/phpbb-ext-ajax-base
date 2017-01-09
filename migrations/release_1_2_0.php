@@ -34,6 +34,7 @@ class release_1_2_0 extends \phpbb\db\migration\migration
 				'ACP_AJAX_BASE_TITLE',
 				array(
 					'module_basename'	=> '\senky\ajaxbase\acp\main_module',
+					'modes'				=> array('settings'),
 				),
 			)),
 		);
