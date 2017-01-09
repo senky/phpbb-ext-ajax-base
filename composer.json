@@ -19,7 +19,7 @@
 	"extra": {
 		"display-name": "Ajax Base",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.0"
+			"phpbb/phpbb": ">=3.1.0,<3.3-dev"
 		}
 	}
 }
