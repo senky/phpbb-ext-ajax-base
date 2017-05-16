@@ -62,8 +62,9 @@ class listener implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header_after'			=> 'assign_common_template_variables',
-			'core.posting_modify_template_vars'	=> 'output_ajax_post_preview',
+			'core.page_header_after'						=> 'assign_common_template_variables',
+			'core.posting_modify_template_vars'				=> 'output_ajax_post_preview',
+			'core.obtain_users_online_string_before_modify'	=> 'fix_online_users_link',
 		);
 	}
 
@@ -123,6 +124,29 @@ class listener implements EventSubscriberInterface
 				);
 				page_footer();
 			}
+		}
+	}
+
+	/**
+	 * Fix online users link when board is in subdirectory.
+	 *
+	 * Credit to Tatiana5 (https://github.com/Tatiana5):
+	 * https://github.com/Tatiana5/phpbb-ext-ajax-base/commit/61eeb43d20a4455b4ece3e757730f90584aee3f4
+	 *
+	 * @param object $event The event object
+	 * @return null
+	 * @access public
+	 */
+	public function fix_online_users_link($event)
+	{
+		if ($this->request->is_ajax())
+		{
+			$user_online_links = $event['user_online_link'];
+			foreach ($user_online_links as $user_id => $user_online_link)
+			{
+				$user_online_links[$user_id] = preg_replace('#(?<=href=")[\./]+?/(?=\w)#', generate_board_url() . '/', $user_online_link);
+			}
+			$event['user_online_link'] = $user_online_links;
 		}
 	}
 }
