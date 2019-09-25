@@ -24,7 +24,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_AJAX_BASE_TITLE'			=> 'Ajax Üssü',
 	'ACP_AJAX_BASE_OPTIONS_SAVED'	=> 'Ajax Üssü seçenekleri kaydedildi.',
-	'OPTIONS'						=> 'Seçenekler',
 	'AJAXBASE_ALLOW_PREVIEW'		=> 'Gönderi önizlemeyi Ajaxlandır',
 	'AJAXBASE_ALLOW_WHOISONLINE'	=> 'Kimler Çevrimiçi bölümünü Ajaxlandır',
 	'AJAXBASE_ALLOW_STATISTICS'		=> 'İstatistikleri Ajaxlandır',

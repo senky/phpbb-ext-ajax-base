@@ -25,7 +25,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_AJAX_BASE_TITLE'			=> 'تقنية الأجاكس',
 	'ACP_AJAX_BASE_OPTIONS_SAVED'	=> 'تم حفظ الخيارات بنجاح.',
-	'OPTIONS'						=> 'الخيارات',
 	'AJAXBASE_ALLOW_PREVIEW'		=> 'تفعيل الأجاكس في مُراجعة المُشاركة ',
 	'AJAXBASE_ALLOW_WHOISONLINE'	=> 'تفعيل الأجاكس في المتواجدون الآن ',
 	'AJAXBASE_ALLOW_STATISTICS'		=> 'تفعيل الأجاكس في الإحصائيات ',

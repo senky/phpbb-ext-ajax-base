@@ -25,7 +25,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_AJAX_BASE_TITLE'			=> 'Ajax Base',
 	'ACP_AJAX_BASE_OPTIONS_SAVED'	=> 'Настройки Ajax Base были сохранены.',
-	'OPTIONS'						=> 'Настройки',
 	'AJAXBASE_ALLOW_PREVIEW'		=> 'Ajax в предварительном просмотре',
 	'AJAXBASE_ALLOW_WHOISONLINE'	=> 'Ajax в блоке Кто онлайн',
 	'AJAXBASE_ALLOW_STATISTICS'		=> 'Ajax в блоке Статистика',
